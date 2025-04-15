@@ -40,6 +40,7 @@ include './db.php';
                 <th>Telefone</th>
                 <th>Endereço</th>
                 <th>Data Cadastro</th>
+                <th>Acões</th>
               </tr>
             </thead>
             <tbody>
@@ -54,6 +55,14 @@ include './db.php';
                   <td><?= $usuario['telefone'] ?></td>
                   <td><?= $usuario['endereco'] ?></td>
                   <td><?= date('d/m/Y H:i', strtotime($usuario['criado_em'])) ?></td>
+                  <td>
+                    <a href="admin_usuarios_editar.php?id=<?= $usuario['id'] ?>" class="btn btn-warning btn-sm">
+                      <i class="fas fa-edit"></i>
+                    </a>
+                    <a href="admin_usuarios_excluir.php?id=<?= $usuario['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este pedido?')">
+                      <i class="fas fa-trash-alt"></i>
+                    </a>
+                  </td>
                 </tr>
               <?php } ?>
             </tbody>

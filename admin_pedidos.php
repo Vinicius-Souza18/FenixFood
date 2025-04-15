@@ -4,12 +4,14 @@ include './db.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <title>Pedidos - Painel Admin</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 </head>
+
 <body class="bg-dark text-white">
   <div class="d-flex">
     <!-- Sidebar -->
@@ -41,6 +43,7 @@ include './db.php';
                 <th>Total</th>
                 <th>Status</th>
                 <th>Data</th>
+                <th>Ações</th>
               </tr>
             </thead>
             <tbody>
@@ -61,6 +64,15 @@ include './db.php';
                   <td>R$ <?= number_format($pedido['preco_total'], 2, ',', '.') ?></td>
                   <td><span class="badge bg-info text-dark"><?= $pedido['status'] ?></span></td>
                   <td><?= date('d/m/Y H:i', strtotime($pedido['data_pedido'])) ?></td>
+                  <td>
+                    <a href="admin_pedidos_editar.php?id=<?= $pedido['id'] ?>" class="btn btn-warning btn-sm">
+                      <i class="fas fa-edit"></i>
+                    </a>
+                    <a href="admin_pedidos_excluir.php?id=<?= $pedido['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este pedido?')">
+                      <i class="fas fa-trash-alt"></i>
+                    </a>
+                  </td>
+
                 </tr>
               <?php } ?>
             </tbody>
@@ -70,4 +82,5 @@ include './db.php';
     </main>
   </div>
 </body>
+
 </html>

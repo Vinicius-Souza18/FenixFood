@@ -19,7 +19,7 @@
       <div class="col-md-4">
         <h6 class="text-uppercase">Contato</h6>
         <p><i class="fas fa-envelope me-2"></i> suporte@fenixfood.com</p>
-        <p><i class="fas fa-phone me-2"></i> (11) 99999-0000</p>
+        <p><i class="fas fa-phone me-2"></i> (61) 99143-4306</p>
         <div class="mt-2">
           <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
