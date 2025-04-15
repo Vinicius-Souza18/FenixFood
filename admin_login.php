@@ -49,6 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <input type="password" name="senha" class="form-control" required>
       </div>
       <button type="submit" class="btn btn-warning w-100">Entrar</button>
+      <div>
+        <a href="login.php" class="btn btn-outline-light w-100 mt-2">Paniel do Cliente</a>
+      </div>
     </form>
   </div>
 </body>

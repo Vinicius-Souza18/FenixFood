@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nome = trim($_POST['nome']);
     $email = trim($_POST['email']);
     $telefone = trim($_POST['telefone']);
+    $endereco = trim($_POST['endereco']);
     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
     // Verifica se o email já está cadastrado
@@ -18,8 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($check->rowCount() > 0) {
         $erro = "E-mail já está em uso.";
     } else {
-        $stmt = $pdo->prepare("INSERT INTO usuarios (nome, email, telefone, senha) VALUES (?, ?, ?, ?)");
-        if ($stmt->execute([$nome, $email, $telefone, $senha])) {
+        $stmt = $pdo->prepare("INSERT INTO usuarios (nome, email, telefone, endereco, senha) VALUES (?, ?, ?, ?, ?)");
+        if ($stmt->execute([$nome, $email, $telefone, $endereco, $senha])) {
             $sucesso = "Cadastro realizado com sucesso! Faça o login.";
         } else {
             $erro = "Erro ao cadastrar.";
@@ -59,6 +60,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <div class="mb-3">
         <label>Telefone:</label>
         <input type="text" name="telefone" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label>Enderoço:</label>
+        <input type="text" name="endereco" class="form-control">
       </div>
       <div class="mb-3">
         <label>Senha:</label>

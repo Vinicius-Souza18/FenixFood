@@ -53,9 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <button type="submit" class="btn btn-warning w-100">Entrar</button>
       <a href="cadastro.php" class="btn btn-outline-light w-100 mt-2">Criar Conta</a>
       <div>
-       
         <a href="admin_login.php" class="btn btn-outline-light w-100 mt-2">Paniel Administrador</a>
-
       </div>
 
     </form>
